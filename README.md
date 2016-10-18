@@ -1,1 +1,1 @@
-# udacity-front-end-developer
+# Udacity Front End Developer Course
