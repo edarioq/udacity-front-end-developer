@@ -1,0 +1,36 @@
+/* add your CSS here */
+
+body {
+  padding: 25px 15px;
+}
+.body-bg {
+  padding: 20px 20px;
+  border: 1px solid #c9c9c9;
+  width: 400px;
+  box-shadow: 8px 8px #f1f1f1;
+}
+
+img.animal-img {
+  border: 1px solid #f1f1f1;
+  width: 100%;
+}
+
+.content {
+  margin-top: 10px;
+  padding: 10px 20px;
+  border: 1px solid #c9c9c9;
+}
+
+p.fact {
+  font-style: italic;
+}
+
+.content ul {
+  padding-left: 0;
+}
+.content ul li {
+  list-style-type: none;
+}
+.content ul li span {
+  font-weight: 600;
+}

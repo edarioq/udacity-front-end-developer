@@ -1,5 +1,20 @@
+==================
+Lesson 1 HTML
+==================
 headandshoulders
 listlistlistlist
 letsclimbatree
 arenttreescool?
 morethanafigurehead
+
+==================
+Lesson 2 CSS
+==================
+Select Word: ⌘ + D
+Select Line: ⌘ + L
+Select All: ⌘ + A
+Duplicate code ⌘ + ⇧ + D with or without text highlighted
+Jump to Opening/Closing Parentheses, Brackets, Braces: Ctrl + M
+Jump to Definition: ⌘ + R
+Reopen Tab: ⌘ + ⇧ + T
+Quick Open ⌘ + P
