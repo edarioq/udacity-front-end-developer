@@ -6,13 +6,13 @@ body {
 .body-bg {
   padding: 20px 20px;
   border: 1px solid #c9c9c9;
-  width: 400px;
+  width: 300px;
   box-shadow: 8px 8px #f1f1f1;
 }
 
 img.animal-img {
   border: 1px solid #f1f1f1;
-  width: 100%;
+  width: 300px;
 }
 
 .content {
