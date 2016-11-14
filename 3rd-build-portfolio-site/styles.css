@@ -1,0 +1,101 @@
+/* General styles */
+body {
+  width: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+h1, h2, h3, h4, h5, h6,
+p, span {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
+}
+/* Header */
+header {
+  display: flex;
+  width: 100%;
+  padding: 25px 0;
+  border-bottom: 5px solid #7d97ad;
+}
+
+.logo {
+  width: 20%;
+  margin: auto;
+}
+
+.user {
+  width: 80%;
+  margin: 0 25px;
+}
+
+header .user h1,
+header .user p {
+  color: #2d3c49;
+  text-transform: uppercase;
+  text-align: right;
+}
+
+header .user p {
+  margin: 0;
+  font-weight: 500;
+}
+
+header .user h1 {
+  font-size: 64px;
+  line-height: 0;
+}
+
+header .user p {
+  font-size: 30px;
+}
+
+/* Banner */
+.banner img {
+  width: 100%;
+  margin: 50px 0;
+}
+
+/* Work */
+.work {
+  width: 100%;
+}
+
+.work h2 {
+  font-size: 48px;
+  color: #7d97ad;
+  margin: 10px 25px 20px 25px;
+}
+
+.work h3 {
+  font-size: 46px;
+  color: #2d3c49;
+  text-transform: uppercase;
+  margin: 20px 0 10px 0;
+}
+
+.work-columns {
+  display: flex;
+  width: 100%;
+}
+
+.work-col-1,
+.work-col-2,
+.work-col-3 {
+  width: 33.33333333%;
+  text-align: center;
+}
+
+.work-col-1,
+.work-col-2 {
+  margin-right: 35px;
+}
+
+img.responsive-img {
+  width: 100%;
+}
+
+.work a {
+  font-size: 24px;
+  color: inherit;
+  text-decoration: none;
+}
