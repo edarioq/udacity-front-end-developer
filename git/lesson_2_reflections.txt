@@ -1,0 +1,8 @@
+What happens when you initialize a repository? Why do you need to do it?
+
+    I need to track files
+
+How is the staging area different from the working directory and the repository? What value do you think it offers?
+
+    It's the middle ground between your machine and the repo, a bridge, so that files can be moved from one location
+    to another.
