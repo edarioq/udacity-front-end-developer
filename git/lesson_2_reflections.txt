@@ -5,4 +5,8 @@ What happens when you initialize a repository? Why do you need to do it?
 How is the staging area different from the working directory and the repository? What value do you think it offers?
 
     It's the middle ground between your machine and the repo, a bridge, so that files can be moved from one location
-    to another.
+    to another
+
+How can you use the staging area to make sure you have one commit per logical change?
+
+    I can use diff to see what changes I have to stage
