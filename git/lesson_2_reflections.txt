@@ -10,3 +10,23 @@ How is the staging area different from the working directory and the repository?
 How can you use the staging area to make sure you have one commit per logical change?
 
     I can use diff to see what changes I have to stage
+
+What are some situations when branches would be helpful in keeping your history organized? How would branches help?
+
+    I can work on new features, changes, code refactoring while having the original version intact
+
+How do the diagrams help you visualize the branch structure?
+
+    Helps me understand which commits are accessible by what branch
+
+What are the pros and cons of Git’s automatic merging vs. always doing merges manually?
+
+    Automatic
+    Pros: Faster co-working workflow
+    Cons: Conflics
+
+    Manual
+    Pros: Fine grain control, avoid merge conflicts
+    Cons: Slow, prone to
+
+HEAD = Current commit
