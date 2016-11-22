@@ -18,14 +18,16 @@ use one instead of another?
 What is the benefit of having a copy of the last known state of the remote
 stored locally?
 
-    Don't know...
+    Don't know... Maybe that you have a copy of things just in case, an extra security layer.
 
 How would you collaborate without using Git or GitHub?  What would be easier,
 and what would be harder?
 
-    Fill in your answer here
+    Using email, maybe dropbox too
+    Easier: Everyone knows how to use email and dropbox
+    Harder: Speed at which things are done, reviewed, edited, and approved
 
 When would you want to make changes in a separate branch rather than directly in
 master?  What benefits does each approach have?
 
-    Fill in your answer here
+    To work on a new feature, or fix a bug, the benefit is to have original code in tact just in case you want need to revert, you can also share the feature or bug fix with others and if everything is ok you can create a pull request for that branch to merge into master
