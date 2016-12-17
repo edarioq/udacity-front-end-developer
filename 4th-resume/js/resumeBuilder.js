@@ -91,3 +91,32 @@ var education = {
     "url": "//www.codeschool.com/courses/shaping-up-with-angular-js",
   }],
 };
+
+// Iterate work object
+
+for (var job in work.jobs) {
+  $("workExperience").append(HTMLworkStart);
+  console.log(work.jobs[job]);
+}
+
+// Check if there are skills in the bio object
+if (bio.skills.length > 0) {
+
+  $("#header").append(HTMLskillsStart);
+
+  var addedSkill = HTMLskills.replace("%data%", bio.skills[0]);
+
+  $("#skills").append(addedSkill);
+
+  var addedSkill = HTMLskills.replace("%data%", bio.skills[1]);
+
+  $("#skills").append(addedSkill);
+
+}
+
+// Iterate over work object
+for (var jobs in work ) {
+  if (work.hasOwnProperty(jobs)) {
+    console.log(work[jobs]);
+  }
+}
