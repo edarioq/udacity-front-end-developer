@@ -17,7 +17,7 @@ var work = {
     "title": "SEO Executive",
     "location": "Bogotá",
     "dates": "2013-2014",
-    "description": "Multinational digital marketing holding."
+    "description": "Media investment group."
   }],
 };
 
@@ -50,14 +50,14 @@ var projects = {
 // The contacts object should contain a mobile number, email address, github username, twitter handle and location.
 var bio = {
   "name": "Edgar Quintero",
-  "role": "Full Stack Developer",
+  "role": "Front End Developer",
   "welcomeMessage": "Greetings!",
   "biopci": "images/me.jpg",
   "contacts": {
     "mobile": "316.520.8890",
     "email": "edarioq@gmail.com",
-    "github": "edarioq",
-    "twitter": "edarioq",
+    "github": "/edarioq",
+    "twitter": "@edarioq",
     "location": "Bogotá",
   },
   "skills": ["HTML", "CSS", "JavaScript", "SASS", "Gulp", "Git", "WordPress", "SEO", "Google Analytics"]
@@ -92,31 +92,25 @@ var education = {
   }],
 };
 
-// Iterate work object
-
-for (var job in work.jobs) {
-  $("workExperience").append(HTMLworkStart);
-  console.log(work.jobs[job]);
-}
-
 // Check if there are skills in the bio object
 if (bio.skills.length > 0) {
 
   $("#header").append(HTMLskillsStart);
 
   var addedSkill = HTMLskills.replace("%data%", bio.skills[0]);
-
   $("#skills").append(addedSkill);
 
   var addedSkill = HTMLskills.replace("%data%", bio.skills[1]);
-
   $("#skills").append(addedSkill);
 
 }
 
 // Iterate over work object
-for (var jobs in work ) {
-  if (work.hasOwnProperty(jobs)) {
-    console.log(work[jobs]);
+for (var job in work) {
+  if (work.hasOwnProperty(job)) {
+
+    $('workExperience').append(work[job]);
+    $('')
+
   }
 }
