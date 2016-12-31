@@ -1,116 +1,215 @@
-//  Employer, title, location, dates worked and description
-var work = {
-  jobs: [{
-    "employer": "Webprodo",
-    "title": "Full Stack Developer",
-    "location": "Remote",
-    "dates": "2015 - Present",
-    "description": "Small company, design, tecnology, marketing, and data."
-  }, {
-    "employer": "BlackSip",
-    "title": "SEO Specialist",
-    "location": "Bogotá",
-    "dates": "2015",
-    "description": "Ecommerce startup."
-  }, {
-    "employer": "GroupM",
-    "title": "SEO Executive",
-    "location": "Bogotá",
-    "dates": "2013-2014",
-    "description": "Media investment group."
-  }],
-};
-
-// Title, dates and description strings, and an images array with URL strings for project images.
-var projects = {
-  projects: [{
-    "title": "Prohumanos Consultores LTDA",
-    "dates": "2016",
-    "description": "Custom website development with HTML, CSS, JS, PHP, SASS, Gulp, Git, and WordPress",
-    "images": ["", ""],
-  }, {
-    "title": "Life 72",
-    "dates": "2016",
-    "description": "Custom website development with HTML, CSS, JS, PHP, SASS, Gulp, Git, and WordPress",
-    "images": ["", ""],
-  }, {
-    "title": "Ruber Almanza",
-    "dates": "2016",
-    "description": "Custom website development with HTML, CSS, JS, PHP, SASS, Gulp, Git, and WordPress",
-    "images": ["", ""],
-  }, {
-    "title": "Alliance BJJ",
-    "dates": "2016",
-    "description": "Custom website development with HTML, CSS, JS, PHP, SASS, Gulp",
-    "images": ["", ""],
-  }]
-};
-
-// Name, role, welcomeMessage, and biopic strings, contacts object and skills array of skill strings.
-// The contacts object should contain a mobile number, email address, github username, twitter handle and location.
+/*
+ * 4 JavaScript objects containing Bio, Education, Work and Projects, used to populate HTML
+ */
 var bio = {
-  "name": "Edgar Quintero",
-  "role": "Front End Developer",
-  "welcomeMessage": "Greetings!",
-  "biopci": "images/me.jpg",
-  "contacts": {
-    "mobile": "316.520.8890",
-    "email": "edarioq@gmail.com",
-    "github": "/edarioq",
-    "twitter": "@edarioq",
-    "location": "Bogotá",
-  },
-  "skills": ["HTML", "CSS", "JavaScript", "SASS", "Gulp", "Git", "WordPress", "SEO", "Google Analytics"]
+    "name": "Edgar Quintero",
+    "role": "Web Developer",
+    "contacts": {
+        "mobile": "316.520.8890",
+        "email": "edarioq@gmail.com",
+        "twitter": "@edarioq",
+        "github": "edarioq",
+        "blog": "edgarquintero.me",
+        "location": "Bogotá",
+    },
+    "welcomeMessage": "Writing beautiful code is as much a science as it is an art form.",
+    "skills": ["HTML", "CSS", "JavaScript", "jQuery", "SASS", "Gulp", "Git", "WordPress", "SEO", "Google Analytics"],
+    "biopic": "images/me.jpg"
 };
 
-// Also contains an online Courses array.
-// Each object in the onlineCourses array should contain a title, school, dates and url strings
 var education = {
-  "schoolName": "Politecnico Gran Colombiano",
-  "title": "Systems Engineer",
-  "year": "2010-2012",
-  "onlineCourses": [{
-    "title": "Front End Developer - In progress",
-    "school": "Udacity",
-    "dates": "2016",
-    "url": "//www.udacity.com",
-  }, {
-    "title": "Learning how to Learn",
-    "school": "Coursera",
-    "dates": "2016",
-    "url": "//www.coursera.org",
-  }, {
-    "title": "JavaScript",
-    "school": "Code Academy",
-    "dates": "2016",
-    "url": "//www.codecademy.com",
-  }, {
-    "title": "Shaping up with Angular",
-    "school": "Code School",
-    "dates": "2015",
-    "url": "//www.codeschool.com/courses/shaping-up-with-angular-js",
-  }],
+    "schools": [{
+        "name": "Politécnico Grancolombiano",
+        "location": "Bogotá",
+        "degree": "Systems Engineer",
+        "majors": "N/A",
+        "dates": "2012-2014",
+        "url": "https://www.poli.edu.co",
+    }, {
+        "name": "Norcross High School",
+        "location": "Atlanta, GA",
+        "degree": "N/A",
+        "majors": "N/A",
+        "dates": "2000-2004",
+        "url": "https://www.google.com",
+    }],
+    "onlineCourses": [{
+        "title": "Front End Developer",
+        "school": "Udacity",
+        "dates": "October 2016",
+        "url": "https://www.udacity.com/course/front-end-web-developer-nanodegree--nd001",
+    }, {
+        "title": "JavaScript",
+        "school": "CodeAcademy",
+        "dates": "June 2015",
+        "url": "https://www.codecademy.com/learn/javascript",
+    }]
 };
 
-// Check if there are skills in the bio object
-if (bio.skills.length > 0) {
+var work = {
+    jobs: [{
+        "employer": "Webprodo",
+        "title": "Web Developer",
+        "location": "Remote",
+        "dates": "December 2015 - Present",
+        "description": "Design, tecnology, digital strategy, and data services to both small local businesses and various startups around the world."
+    }, {
+        "employer": "BlackSip",
+        "title": "SEO Strategist",
+        "location": "Bogotá",
+        "dates": "June 2015 - November 2015",
+        "description": "Ecommerce digital marketing agency and technology focused startup."
+    }, {
+        "employer": "GroupM",
+        "title": "SEO Executive",
+        "location": "Bogotá",
+        "dates": "January 2013 - December 2014",
+        "description": "Largest Media Investment Group in the world."
+    }, {
+        "employer": "Intergrupo Digital",
+        "title": "SEO Specialist",
+        "location": "Bogotá",
+        "dates": "June 2010 - July 2013",
+        "description": "Colombian Multinational Company specializing in Software, Infrastructure, Cloud Computing, Business Intelligence, and of couse Digital."
+    }]
+};
 
-  $("#header").append(HTMLskillsStart);
+var projects = {
+    myProject: [{
+        "title": "Prohumanos Consultores LTDA",
+        "dates": "December 2016",
+        "description": "Custom website coded in HTML, CSS (SASS), JS (jQuery), PHP, Gulp, Git, and WordPress.",
+        "images": ["images/project-prohum-1.png", "images/project-prohum-2.png"],
+    }, {
+        "title": "Alliance BJJ",
+        "dates": "November 2016",
+        "description": "Custom website coded in HTML, CSS (SASS), JS (jQuery), Gulp, and Git",
+        "images": ["images/project-alliance-1.png", "images/project-alliance-2.png"],
+    }, {
+        "title": "Life 72",
+        "dates": "October 2016",
+        "description": "Custom website coded in HTML, CSS (SASS), JS (jQuery), PHP, Gulp, Git, and WordPress",
+        "images": ["images/project-life-1.png", "images/project-life-2.png", "images/project-life-3.png"],
+    }, {
+        "title": "Ruber Almanza",
+        "dates": "September 2016",
+        "description": "Custom website coded in HTML, CSS (SASS), JS (jQuery), PHP, Gulp, Git, and WordPress",
+        "images": ["images/project-ruber-1.png", "images/project-ruber-2.png", "images/project-ruber-3.png"],
+    }]
+};
 
-  var addedSkill = HTMLskills.replace("%data%", bio.skills[0]);
-  $("#skills").append(addedSkill);
+/*
+ * Build and show bio
+ */
 
-  var addedSkill = HTMLskills.replace("%data%", bio.skills[1]);
-  $("#skills").append(addedSkill);
+function displayBio() {
+
+    $('#header').prepend(HTMLheaderRole.replace('%data%', bio.role));
+    $('#header').prepend(HTMLheaderName.replace('%data%', bio.name));
+
+    $.each(bio.contacts, function(key, value) {
+        $('#topContacts').append(HTMLcontactGeneric.replace('%contact%', key).replace('%data%', value));
+        $('#footerContacts').append(HTMLcontactGeneric.replace('%contact%', key).replace('%data%', value));
+    });
+
+    $('#header').append(HTMLbioPic.replace('%data%', bio.biopic));
+    $('#header').append(HTMLwelcomeMsg.replace('%data%', bio.welcomeMessage));
+
+    $('#header').append(HTMLskillsStart);
+    $.each(bio.skills, function(value) {
+        $('#skills').append(HTMLskills.replace('%data%', bio.skills[value]));
+    });
 
 }
+displayBio();
 
-// Iterate over work object
-for (var job in work) {
-  if (work.hasOwnProperty(job)) {
+/*
+ * Build and show work
+ */
+function displayWork() {
+    $('#workExperience').append(HTMLworkStart);
 
-    $('workExperience').append(work[job]);
-    $('')
+    $.each(work.jobs, function(job) {
+        var myJobs = work.jobs[job];
 
-  }
+        var myEmployer = HTMLworkEmployer.replace('%data%', myJobs.employer);
+        var myTitle = HTMLworkTitle.replace('%data%', myJobs.title);
+        var myDates = HTMLworkDates.replace('%data%', myJobs.dates);
+        var myLocation = HTMLworkLocation.replace('%data%', myJobs.location);
+        var myDesc = HTMLworkDescription.replace('%data%', myJobs.description);
+
+        $('.work-entry').append(myEmployer + ' ' + myTitle + myDates + myLocation + myDesc);
+    });
+
 }
+displayWork();
+
+/*
+ * Build and show projects
+ */
+function displayProjects() {
+
+    $('#projects').append(HTMLprojectStart);
+
+    $.each(projects.myProject, function(project) {
+
+        var myProjects = projects.myProject[project];
+
+        var projectTitle = HTMLprojectTitle.replace('%data%', myProjects.title);
+        var projectDates = HTMLprojectDates.replace('%data%', myProjects.dates);
+        var projectDescription = HTMLprojectDescription.replace('%data%', myProjects.description);
+
+        $('.project-entry').append(projectTitle + projectDates + projectDescription);
+
+        $.each(myProjects.images, function(i) {
+            var theImage = HTMLprojectImage.replace('%data%', myProjects.images[i]);
+            $('.project-entry:last').append(theImage);
+        });
+
+    });
+
+}
+displayProjects();
+
+/*
+ * Build and show education and online courses
+ */
+function displayEducation() {
+    // Education
+    $('#education').append(HTMLschoolStart);
+
+    $.each(education.schools, function(i) {
+
+        var sName = HTMLschoolName.replace('%data%', education.schools[i].name);
+        var sDegree = HTMLschoolDegree.replace('%data%', education.schools[i].degree);
+        var sDates = HTMLschoolDates.replace('%data%', education.schools[i].dates);
+        var sLocation = HTMLschoolLocation.replace('%data%', education.schools[i].location);
+        var sMajors = HTMLschoolMajor.replace('%data%', education.schools[i].majors);
+
+        $('.education-entry').append(sName + sDegree + sDates + sLocation + sMajors);
+
+    });
+
+    $('.education-entry').append(HTMLonlineClasses);
+
+    // Online courses
+    $.each(education.onlineCourses, function(i) {
+
+        var courseTitle = HTMLonlineTitle.replace('%data%', education.onlineCourses[i].title);
+        var courseSchool = HTMLonlineSchool.replace('%data%', education.onlineCourses[i].school);
+        var courseDates = HTMLonlineDates.replace('%data%', education.onlineCourses[i].dates);
+        var courseUrl = HTMLonlineURL.replace('#', education.onlineCourses[i].url).replace('%data%', education.onlineCourses[i].url);
+
+        $('.education-entry').append(courseTitle + courseSchool + courseDates + courseUrl);
+    });
+}
+displayEducation();
+
+/*
+ * Build and show the map
+ */
+function displayMap() {
+    $('#mapDiv').append(googleMap);
+}
+
+displayMap();

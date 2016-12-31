@@ -11,7 +11,15 @@ h5,
 h6 {
   padding:0;
   margin:0;
-  font-family: "Roboto", sans-serif;
+}
+
+body {
+  font-family: 'Lato', sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Slabo 27px', serif;
+  text-transform: uppercase;
 }
 
 .clear-fix {
@@ -26,7 +34,7 @@ h6 {
 
 h1 {
   font-size: 40px;
-  color: #f5a623;
+  color: #39B5A6;
   line-height: 48px;
   display: inline;
 }
@@ -34,7 +42,7 @@ h1 {
 h2 {
   font-weight: bold;
   font-size: 24px;
-  color: #999;
+  color: #3C2565;
   line-height: 29px;
   padding: 10px;
 }
@@ -93,23 +101,23 @@ a {
 }
 
 .welcome-message {
-  font-style: italic;
-  font-size: 18px;
+  margin: 20px;
+  font-size: 16px;
   color: #f3f3f3;
   line-height: 28px;
 }
 
 #skills-h3 {
-  color: #f5ae23;
+  color: #39B5A6;
   display: none;
 }
 
 .orange {
-  background-color: #f5ae23;
+  background-color: #39B5A6;
 }
 
 .orange-text {
-  color: #f5ae23;
+  color: #39B5A6;
 }
 
 .white-text {
@@ -129,7 +137,11 @@ a {
 
 /* TODO: Replace with image later */
 #header {
-  background-color: #484848;
+  background-color: #3C2565;
+}
+
+span {
+  color: #fff;
 }
 
 .flex-box {
@@ -164,7 +176,16 @@ ul {
 }
 
 img {
+  max-width: 100%;
   padding: 10px;
+}
+
+.project-entry img {
+  box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16), 0 2px 10px 0 rgba(0,0,0,0.12);
+  width: 300px;
+  height: 500px;
+  margin: 25px 25px 25px 0;
+  object-fit: cover;
 }
 
 span {
