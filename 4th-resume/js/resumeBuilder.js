@@ -68,7 +68,7 @@ var education = {
         $.each(education.schools, function(i) {
             $('#education').append(HTMLschoolStart);
 
-            var sName = HTMLschoolName.replace('%data%', education.schools[i].name);
+            var sName = HTMLschoolName.replace('%data%', education.schools[i].name).replace('#', education.schools[i].url);
             var sDegree = HTMLschoolDegree.replace('%data%', education.schools[i].degree);
             var sDates = HTMLschoolDates.replace('%data%', education.schools[i].dates);
             var sLocation = HTMLschoolLocation.replace('%data%', education.schools[i].location);
