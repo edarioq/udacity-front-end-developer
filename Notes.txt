@@ -1,14 +1,5 @@
 ==================
-Lesson 1 HTML
-==================
-headandshoulders
-listlistlistlist
-letsclimbatree
-arenttreescool?
-morethanafigurehead
-
-==================
-Lesson 2 CSS
+Keyboard Shorcuts
 ==================
 Select Word: ⌘ + D
 Select Line: ⌘ + L
@@ -18,3 +9,8 @@ Jump to Opening/Closing Parentheses, Brackets, Braces: Ctrl + M
 Jump to Definition: ⌘ + R
 Reopen Tab: ⌘ + ⇧ + T
 Quick Open ⌘ + P
+
+==================
+JavaScript
+==================
+Class: A function that can create many similar objects of itself
