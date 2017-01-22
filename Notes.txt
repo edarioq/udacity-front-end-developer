@@ -13,4 +13,27 @@ Quick Open ⌘ + P
 ==================
 JavaScript
 ==================
+ - Scopes: Region in code where variables can be accessed by name without access errors
+   ** Variables in the Global scope can be accessed anywhere, this is the lexical scope
+   ** Variables from within functions can be accessed from within that function,
+      these are execution contexts (or in memory scopes)
+     *** They are built as the code runs, not as it's typed
+     *** OR They are only used when executed (or called), not as it's typed
+     *** Execution contexts and objects (key value pairs) are two different things.
+     Can't store an array full of execution contexts or iterate over the contexts, for example.
+     *** There can be many execution contexts, and each can store different values (but only one global scope)
+ - Closures: Functions that have access to all the variables from all the scopes that surround it,
+   or any function that remains available after the outer scopes have returned
+   ** In other words, a way to allowing functions and variables to be called from outside their scope
+   ** One method of having a closure is to create a global variable (array) and store stuff in it,
+      another is to pass it to setTimeout, another is to return it in the function method
+ - The 'this' keyword: An identifier that has an object bound to it
+   ** Usually what is left to a dot
+   ** If no dot, then the global scope gets bound to this
+   ** Possible to force this to equal to the object you want, using .call for example
+ - Prototype delegation (prototype chains): Mechanism of making objects have properties of other objects
+   ** It does so by delegating the failed look ups of the current object to the original object
+   ** Can be achieved in JS by using Object.create(object);
+ - OOP
+
 Class: A function that can create many similar objects of itself

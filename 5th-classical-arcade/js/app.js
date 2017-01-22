@@ -1,19 +1,50 @@
 // Enemies our player must avoid
-var Enemy = function() {
-    // Variables applied to each of our instances go here,
-    // we've provided one for you to get started
-
-    // The image/sprite for our enemies, this uses
-    // a helper we've provided to easily load images
+var Enemy = function(x, y, speed) {
+    // Enemy's image
     this.sprite = 'images/enemy-bug.png';
+
+    // Set the enemy's initial location
+    this.x = x;
+    this.y = y;
+    this.speed = speed;
 };
 
 // Update the enemy's position, required method for game
 // Parameter: dt, a time delta between ticks
 Enemy.prototype.update = function(dt) {
-    // You should multiply any movement by the dt parameter
-    // which will ensure the game runs at the same speed for
-    // all computers.
+    // Movement is multiplied by the dt parameter so that
+    // the game runs at the same speed for all computers.
+    dt = 1;
+
+    bugOne.x = bugOne.x + (dt * bugOne.speed);
+    bugTwo.x = bugTwo.x + (dt * bugTwo.speed);
+    bugThree.x = bugThree.x + (dt * bugThree.speed);
+
+
+    var distanceX = player.x - Math.round(bugThree.x);
+    var distanceY = player.y - Math.round(bugThree.y);
+
+    console.log(distanceX + ' ' + distanceY);
+
+    if (distanceX < 0 && distanceY < 0) {
+      console.log('You lose!');
+    }
+
+    // console.log(player.x + ' - ' + Math.round(bugThree.x) + ' = ' + distanceX);
+
+    // Detect enemy collision with player
+    // for (i = 0; i < allEnemies.length; i++) {
+    //   var distanceX = player.x - Math.round(allEnemies[i].x);
+    //   var distanceY = player.y - Math.round(allEnemies[i].y);
+    //
+    //   console.log(distanceX + ' ' + distanceY);
+    //   if ( (distanceX === 0) && (distanceY === 0) ) {
+    //
+    //     player.x = 200;
+    //     player.y = 400;
+    //   }
+    // }
+    resetBug();
 };
 
 // Draw the enemy on the screen, required method for game
@@ -21,16 +52,77 @@ Enemy.prototype.render = function() {
     ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
 };
 
+// Reset bug location after it goes off screen
+// and give it a different speed
+function resetBug() {
+    for (i = 0; i < allEnemies.length; i++) {
+        if (allEnemies[i].x > 500) {
+            allEnemies[i].x = 0;
+            allEnemies[i].speed = Math.random() + 1.2;
+        }
+    }
+}
+
 // Now write your own player class
 // This class requires an update(), render() and
 // a handleInput() method.
+var Player = function(x, y) {
+    this.sprite = 'images/char-boy.png';
+    this.x = x;
+    this.y = y;
+};
 
+Player.prototype.update = function(dt) {
+    dt = 1;
+    player.win();
+};
+
+Player.prototype.render = function() {
+    ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
+};
+
+Player.prototype.handleInput = function(allowedKeys) {
+
+    if (allowedKeys == 'up') {
+        player.y = player.y - 83;
+    } else if (allowedKeys == 'down') {
+        player.y = player.y + 83;
+    } else if (allowedKeys == 'left') {
+        player.x = player.x - 101;
+    } else {
+        player.x = player.x + 101;
+    }
+
+    // Make sure player doesn't go out of bounds
+    if (player.x < 0) {
+        player.x = 0;
+    } else if (player.x > 400) {
+        player.x = 400;
+    } else if (player.y > 400) {
+        player.y = 400;
+    }
+
+};
+
+Player.prototype.win = function() {
+    if (player.y < 0) {
+        alert('You won!');
+        player.x = 200;
+        player.y = 400;
+
+    }
+};
 
 // Now instantiate your objects.
+var bugOne = new Enemy(0, 60, Math.random() + 2);
+var bugTwo = new Enemy(0, 143, Math.random() + 3);
+var bugThree = new Enemy(0, 228, Math.random() + 1);
+
 // Place all enemy objects in an array called allEnemies
+var allEnemies = [bugOne, bugTwo, bugThree];
+
 // Place the player object in a variable called player
-
-
+var player = new Player(200, 400);
 
 // This listens for key presses and sends the keys to your
 // Player.handleInput() method. You don't need to modify this.
@@ -44,3 +136,6 @@ document.addEventListener('keyup', function(e) {
 
     player.handleInput(allowedKeys[e.keyCode]);
 });
+
+// Disable scrolling
+document.body.style.overflow = "hidden";
