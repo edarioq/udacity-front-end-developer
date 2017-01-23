@@ -24,28 +24,28 @@ Enemy.prototype.update = function(dt) {
     // Collision detection algorithm
     // https://developer.mozilla.org/en-US/docs/Games/Techniques/2D_collision_detection
     for (i = 0; i < allEnemies.length; i++) {
-      var bugCollide = {
-        x: allEnemies[i].x,
-        y: allEnemies[i].y,
-        width: 50,
-        height: 50,
-      };
+        var bugCollide = {
+            x: allEnemies[i].x,
+            y: allEnemies[i].y,
+            width: 50,
+            height: 50,
+        };
 
-      var playerCollide = {
-        x: player.x,
-        y: player.y,
-        width: 50,
-        height: 50,
-      };
+        var playerCollide = {
+            x: player.x,
+            y: player.y,
+            width: 50,
+            height: 50,
+        };
 
-      if (bugCollide.x < playerCollide.x + playerCollide.width &&
-          bugCollide.x + bugCollide.width > playerCollide.x &&
-          bugCollide.y < playerCollide.y + playerCollide.height &&
-          bugCollide.height + bugCollide.y > playerCollide.y) {
-            
+        if (bugCollide.x < playerCollide.x + playerCollide.width &&
+            bugCollide.x + bugCollide.width > playerCollide.x &&
+            bugCollide.y < playerCollide.y + playerCollide.height &&
+            bugCollide.height + bugCollide.y > playerCollide.y) {
+
             player.x = 200;
             player.y = 400;
-      }
+        }
     }
 
     resetBug();
@@ -77,6 +77,8 @@ var Player = function(x, y) {
 };
 
 Player.prototype.update = function(dt) {
+    // Might not need this dt variable on player?
+    // since it's not being used
     dt = 1;
     player.win();
 };
@@ -141,5 +143,5 @@ document.addEventListener('keyup', function(e) {
     player.handleInput(allowedKeys[e.keyCode]);
 });
 
-// Disable scrolling
+// Disable scrolling so that arrow keys don't scroll the page
 document.body.style.overflow = "hidden";
