@@ -21,29 +21,33 @@ Enemy.prototype.update = function(dt) {
     bugThree.x = bugThree.x + (dt * bugThree.speed);
 
 
-    var distanceX = player.x - Math.round(bugThree.x);
-    var distanceY = player.y - Math.round(bugThree.y);
+    // Collision detection algorithm
+    // https://developer.mozilla.org/en-US/docs/Games/Techniques/2D_collision_detection
+    for (i = 0; i < allEnemies.length; i++) {
+      var bugCollide = {
+        x: allEnemies[i].x,
+        y: allEnemies[i].y,
+        width: 50,
+        height: 50,
+      };
 
-    console.log(distanceX + ' ' + distanceY);
+      var playerCollide = {
+        x: player.x,
+        y: player.y,
+        width: 50,
+        height: 50,
+      };
 
-    if (distanceX < 0 && distanceY < 0) {
-      console.log('You lose!');
+      if (bugCollide.x < playerCollide.x + playerCollide.width &&
+          bugCollide.x + bugCollide.width > playerCollide.x &&
+          bugCollide.y < playerCollide.y + playerCollide.height &&
+          bugCollide.height + bugCollide.y > playerCollide.y) {
+            
+            player.x = 200;
+            player.y = 400;
+      }
     }
 
-    // console.log(player.x + ' - ' + Math.round(bugThree.x) + ' = ' + distanceX);
-
-    // Detect enemy collision with player
-    // for (i = 0; i < allEnemies.length; i++) {
-    //   var distanceX = player.x - Math.round(allEnemies[i].x);
-    //   var distanceY = player.y - Math.round(allEnemies[i].y);
-    //
-    //   console.log(distanceX + ' ' + distanceY);
-    //   if ( (distanceX === 0) && (distanceY === 0) ) {
-    //
-    //     player.x = 200;
-    //     player.y = 400;
-    //   }
-    // }
     resetBug();
 };
 
@@ -106,7 +110,7 @@ Player.prototype.handleInput = function(allowedKeys) {
 
 Player.prototype.win = function() {
     if (player.y < 0) {
-        alert('You won!');
+        alert('NICE - You won!');
         player.x = 200;
         player.y = 400;
 
