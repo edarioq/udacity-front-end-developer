@@ -1,0 +1,19 @@
+{
+  "name": "udacity-front-end-developer",
+  "version": "1.0.0",
+  "description": "This is the repo for the completion of the course over at **Udacity**.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/edarioq/udacity-front-end-developer.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/edarioq/udacity-front-end-developer/issues"
+  },
+  "homepage": "https://github.com/edarioq/udacity-front-end-developer#readme"
+}
