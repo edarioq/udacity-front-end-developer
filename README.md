@@ -1,5 +1,7 @@
 # Udacity Front End Developer Course
 
+[title]https://edarioq.github.io/udacity-front-end-developer/
+
 This is the repo for the completion of the course over at **Udacity**. The contents are:
 
 1. MockUp Article
