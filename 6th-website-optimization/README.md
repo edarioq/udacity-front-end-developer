@@ -12,4 +12,5 @@
 
 ## Following are the steps I took to reach 60 FPS
 
-1. 
+1. Reduce the number of pizzas to 40 and added a CSS class to make their positions fixed on screen
+2. 

@@ -7,10 +7,7 @@ gulp.task('serve', function() {
             baseDir: "./"
         }
   });
-  //gulp.watch("sass/*.scss", ['sass']); Not using SASS for this project right now
-  gulp.watch("*.html").on('change', browserSync.reload);
-  gulp.watch("*.css").on('change', browserSync.reload);
-  gulp.watch("*.js").on('change', browserSync.reload);
+  gulp.watch("**").on('change', browserSync.reload);
 });
 
 // Type 'Gulp' to fire up the site

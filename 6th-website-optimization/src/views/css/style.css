@@ -46,6 +46,11 @@ form {
   clear:both;
 }
 
- .container {
+.container {
   background-color: rgba(240, 60, 60, 0.8);
+}
+
+.pizza-container {
+  position: fixed;
+  z-index: -1;
 }
