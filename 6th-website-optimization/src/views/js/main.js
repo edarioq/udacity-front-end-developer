@@ -531,6 +531,7 @@ window.addEventListener('scroll', updatePositions);
 document.addEventListener('DOMContentLoaded', function() {
   var cols = 8;
   var s = 256;
+  // Reduced no. of pizzas to 40
   for (var i = 0; i < 40; i++) {
     var elem = document.createElement('img');
     elem.className = 'mover';
