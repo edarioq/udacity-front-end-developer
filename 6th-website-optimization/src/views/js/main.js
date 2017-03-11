@@ -455,9 +455,10 @@ var resizePizzas = function(size) {
   function changePizzaSizes(size) {
     var dx = determineDx(document.getElementById("pizza0"), size); // Since all pizzas have same widths, took it out of the loop and changed to getting just the first
     var newwidth = (document.getElementById("pizza0").offsetWidth + dx) + 'px'; // Since all pizzas have same widths, took it out of the loop and changed to getting just the first
+    var getPizzas = document.querySelectorAll(".randomPizzaContainer"); // As per instructors notes, added one variable that gets the pizzas so that the DOM is only queried once!
 
-    for (var i = 0; i < document.querySelectorAll(".randomPizzaContainer").length; i++) {
-      document.querySelectorAll(".randomPizzaContainer")[i].style.width = newwidth;
+    for (var i = 0; i < getPizzas.length; i++) {
+      getPizzas[i].style.width = newwidth;
     }
   }
 
@@ -473,8 +474,8 @@ var resizePizzas = function(size) {
 window.performance.mark("mark_start_generating"); // collect timing data
 
 // This for-loop actually creates and appends all of the pizzas when the page loads
+var pizzasDiv = document.getElementById("randomPizzas"); // As per instructor's notes, this assignment is the same every time it loops, so placed it outside the loop!
 for (var i = 2; i < 100; i++) {
-  var pizzasDiv = document.getElementById("randomPizzas");
   pizzasDiv.appendChild(pizzaElementGenerator(i));
 }
 
@@ -507,8 +508,10 @@ function updatePositions() {
   window.performance.mark("mark_start_frame");
 
   var items = document.querySelectorAll('.mover');
+  var bodyScroll = document.body.scrollTop; // Took document.body.scrollTop out of the loop since it's the same in each iteration of the loop
+  
   for (var i = 0; i < items.length; i++) {
-    var phase = Math.sin((document.body.scrollTop / 1250) + (i % 5));
+    var phase = Math.sin((bodyScroll / 1250) + (i % 5));
     items[i].style.left = items[i].basicLeft + 100 * phase + 'px';
   }
 
@@ -531,8 +534,11 @@ window.addEventListener('scroll', updatePositions);
 document.addEventListener('DOMContentLoaded', function() {
   var cols = 8;
   var s = 256;
+  var rows = window.screen.height / s;
+  var noOfPizzasToShow = rows * cols;
+
   // Reduced no. of pizzas to 40
-  for (var i = 0; i < 40; i++) {
+  for (var i = 0; i < noOfPizzasToShow; i++) {
     var elem = document.createElement('img');
     elem.className = 'mover';
     elem.src = "images/pizza.png";

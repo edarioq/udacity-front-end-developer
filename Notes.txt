@@ -72,4 +72,7 @@ Website Performance
         - Modifier: disabled, highlighted, checked, fixed, size big, color yellow
 
 
-1. RUN 
+==================
+Project: Neightborhood Map
+==================
+- AJAX: Can be fired off at anytime.

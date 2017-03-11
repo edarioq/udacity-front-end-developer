@@ -1,3 +1,10 @@
+# How to Run
+
+To run locally, CD to root folder and use `npm install` to install dependencies, then `gulp` to fire up the local server. Click on the respective links:
+
+*Website Optimization Part 1
+*Website Optimization Part 2
+
 # Part 1: Optimize index.html
 
 ## Following are the steps I took to reach a pagespeed score of 90 or higher:
