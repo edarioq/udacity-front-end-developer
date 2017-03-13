@@ -7,57 +7,46 @@ function loadData() {
     var $nytElem = $('#nytimes-articles');
     var $greeting = $('#greeting');
 
+    // API Key a8fe746525334fa8bfbd9779d7539a9c
+    var URL = "https://api.nytimes.com/svc/search/v2/articlesearch.json?api-key=a8fe746525334fa8bfbd9779d7539a9c";
+
     // clear out old data before new request
     $wikiElem.text("");
     $nytElem.text("");
 
-    // load streetview
-    var streetViewURL = '<img class="bgimg" src="http://maps.googleapis.com/maps/api/streetview?size=600x300&location=">';
-    
-    $body.append(streetViewURL);
-
-    // YOUR CODE GOES HERE!
+    // Place streetview background on submit
     var street = $('#street').val();
     var city = $('#city').val();
 
     if (street != null && city != null) {
+        $greeting.text('So, you want to live in ' + city + '?');
         $('.bgimg').attr('src', function () {
             return 'http://maps.googleapis.com/maps/api/streetview?size=600x300&location=' + street + city;
         });
     }
 
-    return false;
+    // Make an AJAX request to the NY Times and display articles
+    $.getJSON( URL, function( data ) {
 
-    // API Key a8fe746525334fa8bfbd9779d7539a9c
-
-    var apiKeyUrl = "https://api.nytimes.com/svc/search/v2/articlesearch.json";
-    apiKeyUrl += '?' + $.param({
-        'api-key': "a8fe746525334fa8bfbd9779d7539a9c"
-    });
-
-    $.getJSON( apiKeyUrl, function( data ) {
-        var items = [];
+        var items = data.response.docs;
         
-        $.each( data, function( key, val ) {
-            items.push( "<li id='" + key + "'>" + val + "</li>" );
-        });
+        for (i = 0; i < items.length; i++ ) {
 
-        console.log(items);
+            var headlines = items[i].headline.main;
+            var snippets = items[i].snippet;
 
-    });
+            $('#nytimes-articles').append('<li>' + '<h4>' + headlines + '</h4>' + snippets + '</li>');
+          
+        }
 
-/*    var url = "https://api.nytimes.com/svc/search/v2/articlesearch.json";
-    url += '?' + $.param({
-        'api-key': "a8fe746525334fa8bfbd9779d7539a9c"
-    });
-    $.ajax({
-        url: url,
-        method: 'GET',
-    }).done(function (result) {
-        console.log(result);
+
     }).fail(function (err) {
+        console.log('Oops! Something broke...');
+         $('#nytimes-articles').append('<h2>Error...</h2>');
         throw err;
-    });*/
+    });
+
+    return false;
 
 };
 
