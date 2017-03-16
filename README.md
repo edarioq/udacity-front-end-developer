@@ -13,7 +13,7 @@ If you'd like to see all projects live, the repo is hosted with [Github Pages](h
 3. Build a Portfolio Site
 4. Resume
 5. Project Arcade Game
-6. Website Optimization (CURRENT)
+6. Website Optimization
 
 ## Additional Courses
 
