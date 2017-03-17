@@ -2,72 +2,33 @@
 <head>
     <title>Cat Clicker Counter</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-    <style>
-        body {
-            margin: 100px auto;
-        }
-
-        .cats {
-            display: flex;
-            width: 100%;
-        }
-
-        .cat-1,
-        .cat-2 {
-            width: 50%;
-        }
-
-        img {
-            width: 100%;
-            height: auto;
-        }
-
-        p {
-            text-align: center;
-        }
-
-    </style>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Slab" rel="stylesheet">
 </head>
 
 <body>
 
-    <div class="cats">
-        <div class="cat-1">
-            <img class="cat-img-1" src="http://lh3.ggpht.com/nlI91wYNCrjjNy5f-S3CmVehIBM4cprx-JFWOztLk7vFlhYuFR6YnxcT446AvxYg4Ab7M1Fy0twaOCWYcUk=s0#w=640&h=426" alt="">
-            <p>The Cat has been clicked: <span id="counter-1">0</span> times!</p>
+    <h1>Premium Cats App</h1>
+
+    <div class="container">
+        <div class="options">
+            <h2>Choose a Cat Image</h2>
+            <form id="cats-form">
+                <input type="radio" name="cats" value="Cat 1" checked>Cat 1 <br />
+                <input type="radio" name="cats" value="Cat 2">Cat 2 <br />
+                <input type="radio" name="cats" value="Cat 3">Cat 3 <br />
+                <input type="radio" name="cats" value="Cat 4">Cat 4 <br />
+                <input type="radio" name="cats" value="Cat 5">Cat 5 <br />
+            </form>
         </div>
-        
-        <div class="cat-2">
-            <img class="cat-img-2" src="https://lh3.ggpht.com/kixazxoJ2ufl3ACj2I85Xsy-Rfog97BM75ZiLaX02KgeYramAEqlEHqPC3rKqdQj4C1VFnXXryadFs1J9A=s0#w=640&h=496" alt="">
-            <p>The Cat has been clicked: <span id="counter-2">0</span> times!</p>
+        <div class="cat-imgs">
+            <h2>Cat 1</h2>
+            <img class="cat-switcher" src="imgs/cats-1.jpeg" alt="Cat 1">
+            <p>This cat has been clicked <span class="updateCounter"> 0 </span> times!</p>
         </div>
     </div>
-
     
+    <script async src="main.js"></script>
 
-    <script>
-
-        var updateCounter1 = $('#counter-1');
-        var updateCounter2 = $('#counter-2');
-
-        var img1 = $('.cat-img-1');
-        var img2 = $('.cat-img-2');
-
-        var counter1 = 0;
-        var counter2 = 0;
-
-        $(img1).click(function () {
-             counter1++;
-             updateCounter1.html(counter1);
-        });
-
-        $(img2).click(function () {
-             counter2++;
-             updateCounter2.html(counter2);
-        });
-
-    </script>
-    
 </body>
-
 </html>

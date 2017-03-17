@@ -1,0 +1,36 @@
+body {
+    font-family: 'Roboto Slab', serif;
+    background-color: #f1f1f1;
+    margin: 100px auto;
+}
+
+h1, h2 {
+    text-align: center;
+}
+
+img {
+    width: 100%;
+}
+
+p {
+    text-align: center;
+}
+
+.container {
+    display: flex;
+    padding: 10px 15px;
+}
+
+.options {
+    text-align: center;
+    width: 50%;
+}
+
+.cat-imgs {
+    width: 50%;
+}
+
+input[type=radio] {
+    margin-right: 15px;
+    margin-left: 15px;
+}
