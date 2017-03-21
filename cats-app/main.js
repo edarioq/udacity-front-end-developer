@@ -1,3 +1,4 @@
+// This is the first noob attempt
 $(function () {
 
     // Get current cat
