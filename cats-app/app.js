@@ -38,8 +38,9 @@ var catData = [
 
 var view = {
 
-    updateclickCount: function() {
-
+    setCurrentCat: function(cat) {
+        var currentCat = cat;
+        return cat;
     }
     
 }
@@ -54,18 +55,11 @@ var view = {
 
 var controller = {
 
-    getCurrentCat: function() {
+    catSwitcher: function(cat) {
 
-    },
-
-    setCurrentCat: function() {
-
-    },
-
-    setClickCount: function() {
-
+        
     }
-
 }
 
-controller.getCurrentCat();
+
+

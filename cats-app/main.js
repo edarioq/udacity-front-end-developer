@@ -1,56 +1,65 @@
-// This is the first noob attempt
 $(function () {
+    
+    var catHeading = $('.cat-imgs h2');
+    var catImg = $('.cat-switcher');
+    var catClicks = $('.updateCounter');
 
-    // Get current cat
+    var clickCounter1 = 0;
+    var clickCounter2 = 0;
+    var clickCounter3 = 0;
+    var clickCounter4 = 0;
+    var clickCounter5 = 0;
+
     $('#cats-form input').change(function () {
-        var chosenCat = $('input[name=cats]:checked').val();
 
-        var name1 = 'Cat 1';
-        var name2 = 'Cat 2';
-        var name3 = 'Cat 3';
-        var name4 = 'Cat 4';
-        var name5 = 'Cat 5';
+        // Get current cat
+        var currentCat = $('input[name=cats]:checked').val();
 
-        // Update image and title based on current cat
-        switch (chosenCat) {
+        // Model - Update image and title based on current cat
+        switch (currentCat) {
             case 'Cat 1':
                 imgURL = 'imgs/cats-1.jpeg';
-                catName = name1;
+                catName = 'Cat 1';
+                clicks = clickCounter1++;
                 break;
             case 'Cat 2':
                 imgURL = 'imgs/cats-2.jpeg';
-                catName = name2;
+                catName = 'Cat 2';
+                clicks = clickCounter2++;
                 break;
             case 'Cat 3':
                 imgURL = 'imgs/cats-3.jpeg';
-                catName = name3;
+                catName = 'Cat 3';
+                clicks = clickCounter3++;
                 break;
             case 'Cat 4':
                 imgURL = 'imgs/cats-4.jpeg';
-                catName = name4;
+                catName = 'Cat 4';
+                clicks = clickCounter4++;
                 break;
             case 'Cat 5':
                 imgURL = 'imgs/cats-5.jpeg';
-                catName = name5;
+                catName = 'Cat 5';
+                clicks = clickCounter5++;
                 break;
             default: 
                 imgURL = 'imgs/cats-1.jpeg';
-                catname = name1;
+                catName = 'Cat 1';
+                clicks = clickCounter1++;
+
+                console.log(currentCat);
+                
         }
-        $('.cat-switcher').attr('src', imgURL);
-        $('.cat-imgs h2').text(catName);
-        clickCounter = 0;
-        $(updateCounter).text('0');
+
+        catImg.attr('src', imgURL);
+        catHeading.text(catName);
+        catClicks.text(clicks);
+
+        console.log(clicks);
+
     });
 
-    var clickCounter = 0;
-    var updateCounter = $('.updateCounter');
-
-    $('.cat-switcher').click(function () {
-        clickCounter++;
-        updateCounter.text(clickCounter);
-    });
-
+    
 });
 
 
