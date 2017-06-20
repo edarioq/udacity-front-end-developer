@@ -1,4 +1,4 @@
-<html>
+<html lang="en">
 <head>
     <title>Cat Clicker Counter</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
@@ -13,23 +13,17 @@
     <div class="container">
         <div class="options">
             <h2>Choose a Cat Image</h2>
-            <form id="cats-form">
-                <input type="radio" name="cats" value="Cat 1" checked>Cat 1 <br />
-                <input type="radio" name="cats" value="Cat 2">Cat 2 <br />
-                <input type="radio" name="cats" value="Cat 3">Cat 3 <br />
-                <input type="radio" name="cats" value="Cat 4">Cat 4 <br />
-                <input type="radio" name="cats" value="Cat 5">Cat 5 <br />
-            </form>
+            <form id="cats-form"></form>
         </div>
         <div class="cat-imgs">
-            <h2>Cat 1</h2>
-            <img class="cat-switcher" src="imgs/cats-1.jpeg" alt="Cat 1">
+            <h2 id="cat-name">Cat 1</h2>
+            <img src="imgs/cats-1.jpeg" id="cat-pic" class="cat-switcher" alt="Cats">
             <p>This cat has been clicked <span class="updateCounter"> 0 </span> times!</p>
         </div>
     </div>
     
-    <script async src="main.js"></script>
-    <!--<script async src="app.js"></script>-->
+    <!--<script async src="main.js"></script>-->
+    <script async src="app.js"></script>
 
 </body>
 </html>
